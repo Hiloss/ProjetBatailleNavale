@@ -12,5 +12,6 @@ public class Case {
 	@Override
 	public String toString() {
 		return "Case [posX=" + posX + ", posY=" + posY + ", etat=" + etat + "]";
-	}	
+	}
+	
 }
