@@ -13,5 +13,4 @@ public class Case {
 	public String toString() {
 		return "Case [posX=" + posX + ", posY=" + posY + ", etat=" + etat + "]";
 	}
-	test
 }
