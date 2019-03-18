@@ -19,4 +19,5 @@ public class Grille {
 	public String toString() {
 		return "Grille [listCase=" + listCase + ", taille=" + taille + "]";
 	}
+	
 }
