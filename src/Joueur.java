@@ -17,6 +17,14 @@ public class Joueur {
 		tabBateau.add(new Bateau("Torpilleur", 2, 0, null));
 	}
 
+	public ArrayList<Bateau> getTabBateau() {
+		return tabBateau;
+	}
+
+	public void setTabBateau(ArrayList<Bateau> tabBateau) {
+		this.tabBateau = tabBateau;
+	}
+
 	public String getNom() {
 		return nom;
 	}
@@ -39,5 +47,23 @@ public class Joueur {
 		return "Joueur [nom=" + nom + ", tabBateau=" + tabBateau + ", grilleBateau=" + grilleBateau + "]";
 	}
 	
+	public ArrayList<Bateau> trierTailleBateau(){
+		ArrayList<Bateau> res = new ArrayList<Bateau>(tabBateau.size());
+		while (! tabBateau.isEmpty()) {
+			int max = tabBateau.get(0).getTaille();
+			int index = 0;
+			for (int i = 1; i < tabBateau.size(); i++) {
+				int taille = tabBateau.get(i).getTaille();
+				if (taille > max) {
+					index = i;
+					max = taille;
+				}
+			}
+			res.add(tabBateau.get(index));
+			tabBateau.remove(index);
+		}
+		tabBateau = res;
+		return res;
+	}
 	
 }
