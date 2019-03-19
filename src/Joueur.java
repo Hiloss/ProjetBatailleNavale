@@ -134,22 +134,22 @@ public class Joueur {
 			switch (orient) {
 			case 1:
 				for (int i = 1; i < b.getTaille(); i++) {
-					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX(), c.getPosY()-1))).setEtat(1);
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX(), c.getPosY()-i))).setEtat(1);
 				}
 				break;
 			case 2:
 				for (int i = 1; i < b.getTaille(); i++) {
-					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX()+1, c.getPosY()))).setEtat(1);
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX()+i, c.getPosY()))).setEtat(1);
 				}
 				break;
 			case 3:
 				for (int i = 1; i < b.getTaille(); i++) {
-					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX(), c.getPosY()+1))).setEtat(1);
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX(), c.getPosY()+i))).setEtat(1);
 				}
 				break;
 			case 4:
 				for (int i = 1; i < b.getTaille(); i++) {
-					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX()-1, c.getPosY()))).setEtat(1);
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX()-i, c.getPosY()))).setEtat(1);
 				}
 			}
 			
