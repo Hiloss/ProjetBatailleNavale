@@ -70,11 +70,13 @@ public class Joueur {
 	public boolean placerBateau(Bateau b, Case c, int orient){
 		boolean res = true;
 		
-		
+		//Verif si la case éxiste
 		if (grilleBateau.getListCase().indexOf(c) == -1) {
 			res = false;
+			System.out.println("lalalalalalal");
 		}
 		
+		//Verif si les cases que va occuper le bateau sont disponible
 		if (res){
 			boolean verifC = false;
 			int i = 1;
@@ -125,8 +127,35 @@ public class Joueur {
 			}
 		}
 		
+		//Placement du bateau
 		if (res) {
+			int index = grilleBateau.listCase.indexOf(c);
+			grilleBateau.listCase.get(index).setEtat(1);
+			switch (orient) {
+			case 1:
+				for (int i = 1; i < b.getTaille(); i++) {
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX(), c.getPosY()-1))).setEtat(1);
+				}
+				break;
+			case 2:
+				for (int i = 1; i < b.getTaille(); i++) {
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX()+1, c.getPosY()))).setEtat(1);
+				}
+				break;
+			case 3:
+				for (int i = 1; i < b.getTaille(); i++) {
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX(), c.getPosY()+1))).setEtat(1);
+				}
+				break;
+			case 4:
+				for (int i = 1; i < b.getTaille(); i++) {
+					grilleBateau.listCase.get(grilleBateau.listCase.indexOf(new Case(c.getPosX()-1, c.getPosY()))).setEtat(1);
+				}
+			}
 			
+			b.setOrientation(orient);
+			c.setEtat(1);
+			b.setPos(c);
 		}
 		
 		return res;

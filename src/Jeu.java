@@ -31,6 +31,7 @@ public class Jeu {
 				int orien = sc.nextInt();
 
 				stop = j1.placerBateau(j1.getTabBateau().get(i), c, orien);
+				System.out.println(stop);
 			}
 		}
 		
