@@ -27,6 +27,14 @@ public class Grille {
 	public void setTaille(int taille) {
 		this.taille = taille;
 	}
+
+	public ArrayList<Case> getListCase() {
+		return listCase;
+	}
+
+	public void setListCase(ArrayList<Case> listCase) {
+		this.listCase = listCase;
+	}
 	
 	
 }

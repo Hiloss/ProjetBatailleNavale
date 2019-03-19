@@ -18,7 +18,20 @@ public class Jeu {
 		
 		//Placement des bateaux
 		for (int i = 0; i < j1.getTabBateau().size(); i++) {
-			j1.placerBateau(j1.getTabBateau().get(i));
+			boolean stop = false;
+			System.out.println("~~ Placement du bateau: " + j1.getTabBateau().get(i).getNom() + " ~~");
+			while(!stop){
+				System.out.println("Position en X ?");
+				int posX = sc.nextInt();
+				System.out.println("Position en Y ?");
+				int posY = sc.nextInt();
+				Case c = new Case(posX,posY);
+				
+				System.out.println("Orientation du bateau ?");
+				int orien = sc.nextInt();
+
+				stop = j1.placerBateau(j1.getTabBateau().get(i), c, orien);
+			}
 		}
 		
 		System.out.println(j1);

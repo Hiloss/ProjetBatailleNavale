@@ -66,4 +66,70 @@ public class Joueur {
 		return res;
 	}
 	
+	
+	public boolean placerBateau(Bateau b, Case c, int orient){
+		boolean res = true;
+		
+		
+		if (grilleBateau.getListCase().indexOf(c) == -1) {
+			res = false;
+		}
+		
+		if (res){
+			boolean verifC = false;
+			int i = 1;
+			switch (orient) {
+			case 1:
+				while (! verifC && i < b.getTaille()){
+					Case cbis = new Case(c.getPosX(), c.getPosY()-i);
+					if (grilleBateau.getListCase().indexOf(cbis) == -1) {
+						verifC = false;
+						res = false;
+					}
+					i++;
+				}
+				break;
+			case 2:
+				while (! verifC && i < b.getTaille()){
+					Case cbis = new Case(c.getPosX()+i, c.getPosY());
+					if (grilleBateau.getListCase().indexOf(cbis) == -1) {
+						verifC = false;
+						res = false;
+					}
+					i++;
+				}
+				break;
+			case 3:
+				while (! verifC && i < b.getTaille()){
+					Case cbis = new Case(c.getPosX(), c.getPosY()+i);
+					if (grilleBateau.getListCase().indexOf(cbis) == -1) {
+						verifC = false;
+						res = false;
+					}
+					i++;
+				}
+				break;
+			case 4:
+				while (! verifC && i < b.getTaille()){
+					Case cbis = new Case(c.getPosX()-i, c.getPosY());
+					if (grilleBateau.getListCase().indexOf(cbis) == -1) {
+						verifC = false;
+						res = false;
+					}
+					i++;
+				}
+				break;
+			default:
+				res = false;
+				break;
+			}
+		}
+		
+		if (res) {
+			
+		}
+		
+		return res;
+	}
+	
 }
