@@ -65,8 +65,7 @@ public class Joueur {
 		tabBateau = res;
 		return res;
 	}
-	
-	
+		
 	public boolean placerBateau(Bateau b, Case c, int orient){
 		boolean res = true;
 		

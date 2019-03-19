@@ -10,14 +10,27 @@ public class Grille {
 		listCase = new ArrayList<Case>(t*t);
 		for (int i = 1; i <= t; i++) {
 			for (int j = 1; j <= t; j++) {
-				listCase.add(new Case(i,j));
+				listCase.add(new Case(j,i));
 			}
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Grille [listCase=" + listCase + ", taille=" + taille + "]";
+		String res = "";
+		for (int i = 0; i < taille; i++) {
+			for (int j = 0; j < taille; j++) {
+				int pos = i*taille+j;
+				int etat = listCase.get(pos).getEtat();
+				if (etat == 1)
+					res += "X ";
+				else
+					res += "O ";
+			}
+			res+="\n";
+		}
+		System.out.println(listCase);
+		return res;
 	}
 
 	public int getTaille() {

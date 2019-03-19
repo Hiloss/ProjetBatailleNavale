@@ -1,7 +1,7 @@
 public class Case {
 	
-	int posX, posY;
-	int etat;
+	private int posX, posY;
+	private int etat;
 
 	public int getPosX() {
 		return posX;

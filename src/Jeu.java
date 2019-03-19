@@ -34,7 +34,12 @@ public class Jeu {
 				System.out.println(stop);
 			}
 		}
+//		j1.placerBateau(j1.getTabBateau().get(0), new Case(9,9), 1);
+//		j1.placerBateau(j1.getTabBateau().get(1), new Case(2,1), 3);
+//		j1.placerBateau(j1.getTabBateau().get(2), new Case(3,1), 3);
+//		j1.placerBateau(j1.getTabBateau().get(3), new Case(4,1), 3);
+//		j1.placerBateau(j1.getTabBateau().get(4), new Case(5,1), 3);
 		
-		System.out.println(j1);
+		System.out.println(j1.getGrilleBateau());
 	}
 }
