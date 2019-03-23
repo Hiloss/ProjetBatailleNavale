@@ -1,3 +1,4 @@
+package Source;
 public class Case {
 	
 	private int posX, posY;

@@ -1,3 +1,4 @@
+package Source;
 public class Bateau {
 
 	private String nom;
