@@ -1,12 +1,6 @@
 package Affichage;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-
-import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -16,15 +10,15 @@ import Source.*;
 public class AffichageSolo extends JPanel {
 	
 	private AffichageGrille dessGrille;
-	private JTextField pseudo;
+	private Joueur nJoueur;
 	
-	public AffichageSolo(Grille g) {
-		dessGrille = new AffichageGrille(g);
+	public AffichageSolo(Grille g, Joueur j) {
+		nJoueur = j;
+		dessGrille = new AffichageGrille(g, j);
 		dessGrille.setPreferredSize(new Dimension(500,500));
+		add(new JLabel("Pseudo : " + nJoueur.getNom()));
 		add(dessGrille);
-		add(new JLabel("Pseudo"));
-		pseudo = new JTextField(10);
-		add(pseudo);
+		add(new JLabel("Taille : " + dessGrille.getGrilleB().getTaille()));
 	}
 	
 	@Override

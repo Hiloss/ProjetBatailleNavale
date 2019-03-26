@@ -2,6 +2,7 @@ package Source;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import Affichage.AffichageSolo;
 import Affichage.Menu;
@@ -20,9 +21,7 @@ public class Jeu {
 		
 		//Creation du joueur
 		Joueur j1 = new Joueur(pseudo, taille);
-		
-		j1.placerBateau(j1.getTabBateau().get(0), new Case(1,1), 3);
-
+		//j1.placerBateau(j1.getTabBateau().get(0), new Case(1,1), 3);
 		
 		//Affichage du menu
 		JFrame fenetre = new JFrame("Bataille Navale");
@@ -39,16 +38,16 @@ public class Jeu {
 			switch (choix) {
 			case 1:
 				choixFait = true;
-				AffichageSolo dessinSolo = new AffichageSolo(j1.getGrilleBateau());
+				AffichageSolo dessinSolo = new AffichageSolo(j1.getGrilleBateau(), j1);
 				fenetre.setContentPane(dessinSolo);
 				fenetre.repaint();
 				fenetre.setSize(600,600);
+//				j1.placerBateau();
 				break;
 			default:
 				Thread.sleep(10);
 				break;
 			}
 		}
-		
 	}
 }
