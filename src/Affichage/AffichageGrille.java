@@ -12,6 +12,7 @@ public class AffichageGrille extends JPanel {
 	private Grille grilleB;
 	private int posX, posY, orient, hauteur, longueur, bateauPlace;
 	private Joueur joueur;
+	private Bateau bateau;
 	
 	public AffichageGrille(Grille g, Joueur j) {
 		grilleB = g;
@@ -22,7 +23,9 @@ public class AffichageGrille extends JPanel {
 		orient = 4;
 		joueur = j;
 		bateauPlace = 0;
+		bateau = null;
 		addMouseMotionListener(new MouseGrilleListener());
+		addMouseListener(new MouseGrilleListener());
 	}
 	
 	
@@ -47,7 +50,7 @@ public class AffichageGrille extends JPanel {
 			}
 		}
 		if (bateauPlace < joueur.getTabBateau().size()) {
-			Bateau bateau = joueur.getTabBateau().get(bateauPlace);
+			bateau = joueur.getTabBateau().get(bateauPlace);
 			int taille = bateau.getTaille();
 			g.setColor(Color.darkGray);
 			switch (orient) {
@@ -72,6 +75,42 @@ public class AffichageGrille extends JPanel {
 			}
 			g.fillRect(posX, posY, longueur, hauteur);
 		}
+	}
+
+
+
+	public int getBateauPlace() {
+		return bateauPlace;
+	}
+
+
+
+	public void setBateauPlace(int bateauPlace) {
+		this.bateauPlace = bateauPlace;
+	}
+
+
+
+	public Bateau getBateau() {
+		return bateau;
+	}
+
+
+
+	public void setBateau(Bateau bateau) {
+		this.bateau = bateau;
+	}
+
+
+
+	public Joueur getJoueur() {
+		return joueur;
+	}
+
+
+
+	public void setJoueur(Joueur joueur) {
+		this.joueur = joueur;
 	}
 
 
