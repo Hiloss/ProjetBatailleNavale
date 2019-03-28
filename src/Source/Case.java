@@ -66,4 +66,12 @@ public class Case {
 	public void estTouche() {
 		etat = 2;
 	}
+	
+	public boolean memeEndroit(Case c) {
+		if (posX != c.posX)
+			return false;
+		if (posY != c.posY)
+			return false;
+		return true;
+	}
 }

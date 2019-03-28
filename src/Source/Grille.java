@@ -50,5 +50,4 @@ public class Grille {
 		this.listCase = listCase;
 	}
 	
-	
 }
