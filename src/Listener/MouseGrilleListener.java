@@ -39,7 +39,6 @@ public class MouseGrilleListener implements MouseListener, MouseMotionListener {
 			{
 				if (j.placerBateau(ag.getBateau(), c, ag.getOrient())) {
 					ag.setBateauPlace(ag.getBateauPlace()+1);
-					System.out.println(ag.getBateauPlace());
 				}
 				ag.repaint();
 			}

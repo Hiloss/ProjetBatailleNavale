@@ -16,11 +16,11 @@ public class AffichageGrille extends JPanel {
 	
 	public AffichageGrille(Grille g, Joueur j) {
 		grilleB = g;
-		posX = 150;
-		posY = 150;
+		posX = 0;
+		posY = 0;
 		hauteur = 0;
 		longueur = 0;
-		orient = 4;
+		orient = 1;
 		joueur = j;
 		bateauPlace = 0;
 		bateau = null;

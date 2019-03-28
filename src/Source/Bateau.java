@@ -4,14 +4,12 @@ public class Bateau {
 	private String nom;
 	private int taille, orientation;
 	private Case pos;
-	private boolean mort;
 	
 	public Bateau(String n, int t, int o, Case p) {
 		nom = n;
 		taille = t;
 		orientation = o;
 		pos = p;
-		mort = false;
 	}
 
 	public String getNom() {
@@ -46,18 +44,8 @@ public class Bateau {
 		this.pos = pos;
 	}
 
-	public boolean isMort() {
-		return mort;
-	}
-
-	public void setMort(boolean mort) {
-		this.mort = mort;
-	}
-
 	@Override
 	public String toString() {
-		return "Bateau [nom=" + nom + ", taille=" + taille + ", orientation=" + orientation + ", pos=" + pos + ", mort="
-				+ mort + "]";
+		return "Bateau [nom=" + nom + ", taille=" + taille + ", orientation=" + orientation + ", pos=" + pos + "]";
 	}
-	
 }

@@ -51,9 +51,19 @@ public class Case {
 		posY = y;
 		etat = 0;
 	}
+	
+	public Case(int x, int y, int e) {
+		posX = x;
+		posY = y;
+		etat = e;
+	}
 
 	@Override
 	public String toString() {
 		return "Case [posX=" + posX + ", posY=" + posY + ", etat=" + etat + "]";
+	}
+	
+	public void estTouche() {
+		etat = 2;
 	}
 }
