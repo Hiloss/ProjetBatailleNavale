@@ -30,10 +30,13 @@ public class MouseGrilleListener implements MouseListener, MouseMotionListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (SwingUtilities.isLeftMouseButton(e)) {
-			int x = e.getX();
-			int y = e.getY();
 			AffichageGrille ag = (AffichageGrille)e.getSource();
-			Case c = new Case((x/(ag.getWidth()/ag.getGrilleB().getTaille()))+1, (y/((ag.getHeight()/ag.getGrilleB().getTaille())))+1);
+			int x = (e.getX()/(ag.getWidth()/ag.getGrilleB().getTaille()))+1;
+			System.out.println(x);
+			int y = (e.getY()/((ag.getHeight()/ag.getGrilleB().getTaille())))+1;
+			System.out.println(y);
+			Case c = ag.getGrilleB().getListCase().get(ag.getGrilleB().indexCase(x, y));
+			System.out.println(c);
 			Joueur j = ag.getJoueur();
 			if (ag.getBateauPlace() < ag.getJoueur().getTabBateau().size())
 			{
@@ -41,6 +44,11 @@ public class MouseGrilleListener implements MouseListener, MouseMotionListener {
 					ag.setBateauPlace(ag.getBateauPlace()+1);
 				}
 				ag.repaint();
+			}
+			else {
+				System.out.println("tire");
+				j.tirer(j, c);
+				System.out.println("a tiré");
 			}
 		}
 	}

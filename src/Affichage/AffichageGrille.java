@@ -39,13 +39,25 @@ public class AffichageGrille extends JPanel {
 		for (int i = 0; i < grilleB.getTaille(); i++) { //y
 			for (int j = 0; j < grilleB.getTaille(); j++) {   //x
 				int index = i*grilleB.getTaille()+j;
-				if (grilleB.getListCase().get(index).getEtat() == 0) {
+				switch (grilleB.getListCase().get(index).getEtat()) {
+				case 0:
 					g.setColor(Color.black);
 					g.drawRect((getWidth()/grilleB.getTaille())*(j),(getHeight()/grilleB.getTaille())*(i), (getWidth()/grilleB.getTaille())-1, (getHeight()/grilleB.getTaille())-1);
-				}
-				else {
+					break;
+				case 1:
 					g.setColor(Color.red);
 					g.fillRect((getWidth()/grilleB.getTaille())*(j),(getHeight()/grilleB.getTaille())*(i), (getWidth()/grilleB.getTaille())-1, (getHeight()/grilleB.getTaille())-1);
+					break;
+				case 2:
+					g.setColor(Color.black);
+					g.fillRect((getWidth()/grilleB.getTaille())*(j),(getHeight()/grilleB.getTaille())*(i), (getWidth()/grilleB.getTaille())-1, (getHeight()/grilleB.getTaille())-1);
+					break;
+				}
+				if (grilleB.getListCase().get(index).getEtat() == 0) {
+					
+				}
+				else {
+					
 				}
 			}
 		}

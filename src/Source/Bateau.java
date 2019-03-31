@@ -11,6 +11,56 @@ public class Bateau {
 		orientation = o;
 		pos = p;
 	}
+	
+	public boolean contient(Case c) {
+		boolean res = true;
+		int cx = c.getPosX();
+		int cy = c.getPosY();
+		int i = 0;
+		switch (orientation) {
+		case 1:
+			while (i < taille && res) {
+				if (cx != pos.getPosX()) 
+					res = false;
+				else
+					if (cy != pos.getPosY()-i)
+						res = false;
+				i++;
+			}
+			break;
+		case 2:
+			while (i < taille && res) {
+				if (cx != pos.getPosX()+i) 
+					res = false;
+				else
+					if (cy != pos.getPosY())
+						res = false;
+				i++;
+			}
+			break;
+		case 3:
+			while (i < taille && res) {
+				if (cx != pos.getPosX()) 
+					res = false;
+				else
+					if (cy != pos.getPosY()+i)
+						res = false;
+				i++;
+			}
+			break;
+		case 4:
+			while (i < taille && res) {
+				if (cx != pos.getPosX()-i) 
+					res = false;
+				else
+					if (cy != pos.getPosY())
+						res = false;
+				i++;
+			}
+			break;
+		}
+		return res;
+	}
 
 	public String getNom() {
 		return nom;

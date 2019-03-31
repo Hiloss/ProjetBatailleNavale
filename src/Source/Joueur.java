@@ -1,5 +1,8 @@
 package Source;
 import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Joueur {
 
@@ -161,4 +164,37 @@ public class Joueur {
 		return res;
 	}
 	
+	public boolean tirer(Joueur j2, Case c) {
+		boolean res = true;
+		switch (c.getEtat()) {
+		case 1:
+			int index = j2.getGrilleBateau().getListCase().indexOf(c);
+			Case c1 = j2.getGrilleBateau().getListCase().get(index);
+			c1.setEtat(2);
+			boolean trouve = false;
+			int i = 0;
+			while (! trouve && i < tabBateau.size()) {
+				System.out.println("test");
+				Bateau b = tabBateau.get(i);
+				if (j2.getGrilleBateau().BateauDetruit(b)) {
+					JOptionPane.showMessageDialog(null, "Touché ! Coulé !", "Information", JOptionPane.INFORMATION_MESSAGE);
+					tabBateau.remove(i);
+					trouve = true;
+				}
+				i++;
+			}
+			if (! trouve)
+				JOptionPane.showMessageDialog(null, "Touché !", "Information", JOptionPane.INFORMATION_MESSAGE);
+			if (tabBateau.isEmpty()) {
+				JOptionPane.showMessageDialog(null, "Vous avez gagné !", "Information", JOptionPane.INFORMATION_MESSAGE);
+				System.exit(0);
+			}	
+			break;
+		default:
+			JOptionPane.showMessageDialog(null, "Tire Loupé, Réessayer", "Attention", JOptionPane.WARNING_MESSAGE);
+			res = false;
+			break;
+		}
+		return res;
+	}
 }
