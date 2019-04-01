@@ -1,5 +1,8 @@
 package Source;
-public class Bateau {
+
+import java.io.Serializable;
+
+public class Bateau implements Serializable{
 
 	private String nom;
 	private int taille, orientation;

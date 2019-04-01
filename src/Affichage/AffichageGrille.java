@@ -2,17 +2,29 @@ package Affichage;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
 import Source.*;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import Listener.KeyGrilleListener;
 import Listener.MouseGrilleListener;
 
-public class AffichageGrille extends JPanel {
+public class AffichageGrille extends JPanel implements Serializable{
 	
 	private Grille grilleB;
 	private int posX, posY, orient, hauteur, longueur, bateauPlace;
 	private Joueur joueur;
 	private Bateau bateau;
+
 	
 	public AffichageGrille(Grille g, Joueur j) {
 		grilleB = g;
@@ -26,6 +38,9 @@ public class AffichageGrille extends JPanel {
 		bateau = null;
 		addMouseMotionListener(new MouseGrilleListener());
 		addMouseListener(new MouseGrilleListener());
+		addKeyListener(new KeyGrilleListener());
+		setVisible(true);
+		requestFocusInWindow();
 	}
 	
 	
@@ -53,18 +68,13 @@ public class AffichageGrille extends JPanel {
 					g.fillRect((getWidth()/grilleB.getTaille())*(j),(getHeight()/grilleB.getTaille())*(i), (getWidth()/grilleB.getTaille())-1, (getHeight()/grilleB.getTaille())-1);
 					break;
 				}
-				if (grilleB.getListCase().get(index).getEtat() == 0) {
-					
-				}
-				else {
-					
-				}
 			}
 		}
 		if (bateauPlace < joueur.getTabBateau().size()) {
 			bateau = joueur.getTabBateau().get(bateauPlace);
 			int taille = bateau.getTaille();
 			g.setColor(Color.darkGray);
+			orient = bateau.getOrientation();
 			switch (orient) {
 			case 1:
 				hauteur = ((getHeight()/grilleB.getTaille())-1)*taille;

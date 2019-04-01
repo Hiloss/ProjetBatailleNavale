@@ -1,7 +1,8 @@
 package Source;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Grille {
+public class Grille implements Serializable {
 
 	ArrayList<Case> listCase;
 	int taille;

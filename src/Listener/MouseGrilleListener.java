@@ -25,12 +25,13 @@ public class MouseGrilleListener implements MouseListener, MouseMotionListener {
 		ag.setPosX(x-(ag.getWidth()/ag.getGrilleB().getTaille()/2)-1);
 		ag.setPosY(y-(ag.getHeight()/ag.getGrilleB().getTaille()/2)-1);
 		ag.repaint();
+		ag.requestFocusInWindow();
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		AffichageGrille ag = (AffichageGrille)e.getSource();
 		if (SwingUtilities.isLeftMouseButton(e)) {
-			AffichageGrille ag = (AffichageGrille)e.getSource();
 			int x = (e.getX()/(ag.getWidth()/ag.getGrilleB().getTaille()))+1;
 			System.out.println(x);
 			int y = (e.getY()/((ag.getHeight()/ag.getGrilleB().getTaille())))+1;
@@ -51,6 +52,7 @@ public class MouseGrilleListener implements MouseListener, MouseMotionListener {
 				System.out.println("a tiré");
 			}
 		}
+		ag.requestFocusInWindow();
 	}
 
 	@Override

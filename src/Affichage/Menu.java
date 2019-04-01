@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+
 public class Menu extends JPanel {
 	
 	private JButton solo, deux, autre;
@@ -26,6 +27,7 @@ public class Menu extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				choix = 1;
+				
 			}
 		});
 		
@@ -36,16 +38,18 @@ public class Menu extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				choix = 2;
+				
 			}
 		});
 		
-		autre = new JButton("Autre");
+		autre = new JButton("Charger");
 		autre.setPreferredSize(new Dimension(190,90));
 		autre.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				choix = 3;
+				
 			}
 		});
 		
@@ -54,6 +58,10 @@ public class Menu extends JPanel {
 		add(autre);
 	}
 	
+	public void setChoix(int choix) {
+		this.choix = choix;
+	}
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);

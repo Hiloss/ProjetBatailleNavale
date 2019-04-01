@@ -1,10 +1,11 @@
 package Source;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-public class Joueur {
+public class Joueur implements Serializable {
 
 	private String nom;
 	private ArrayList<Bateau> tabBateau;
@@ -14,11 +15,11 @@ public class Joueur {
 		nom = n;
 		grilleBateau = new Grille(t);
 		tabBateau = new ArrayList<Bateau>(5);
-		tabBateau.add(new Bateau("Porte-Avion", 5, 0, null));
-		tabBateau.add(new Bateau("Croiseur", 4, 0, null));
-		tabBateau.add(new Bateau("Contre-Torpilleur", 3, 0, null));
-		tabBateau.add(new Bateau("Sous-Marin", 3, 0, null));
-		tabBateau.add(new Bateau("Torpilleur", 2, 0, null));
+		tabBateau.add(new Bateau("Porte-Avion", 5, 1, null));
+		tabBateau.add(new Bateau("Croiseur", 4, 1, null));
+		tabBateau.add(new Bateau("Contre-Torpilleur", 3, 1, null));
+		tabBateau.add(new Bateau("Sous-Marin", 3, 1, null));
+		tabBateau.add(new Bateau("Torpilleur", 2, 1, null));
 	}
 
 	public ArrayList<Bateau> getTabBateau() {
