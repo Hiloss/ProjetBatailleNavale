@@ -37,7 +37,7 @@ public class Jeu {
 				break;
 			case 3:
 				choixFait = true;
-//				choixCharge(fenetre);
+				choixCharge(fenetre);
 				break;
 			default:
 				Thread.sleep(10);
@@ -74,24 +74,25 @@ public class Jeu {
 		fenetre.setSize(600,600);
 	}
 	
-//	public static void choixCharge(JFrame jf) throws ClassNotFoundException {
-//		ObjectInputStream ois;
-//		AffichageSolo jeux = null;
-//		try {
-//			ois = new ObjectInputStream(new FileInputStream("C:\\Users\\Brian\\git\\ProjetBatailleNavale\\Sauvegarde.txt"));
-//			jeux = (AffichageSolo)(ois.readObject());
-//			ois.close();
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		JFrame fenetre = jf;
-//		fenetre.setContentPane(jeux);
-//		fenetre.repaint();
-//		fenetre.setSize(600,600);
-//	}
+	public static void choixCharge(JFrame jf) throws ClassNotFoundException {
+		ObjectInputStream ois;
+		AffichageSolo jeux = null;
+		try {
+			ois = new ObjectInputStream(new FileInputStream("sauv.txt"));
+			jeux = (AffichageSolo)(ois.readObject());
+			ois.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JFrame fenetre = jf;
+		fenetre.setContentPane(jeux);
+		fenetre.repaint();
+		jeux.getDessGrille().wakeListener();
+		fenetre.setSize(600,600);
+	}
 }
 

@@ -36,14 +36,16 @@ public class AffichageGrille extends JPanel implements Serializable{
 		joueur = j;
 		bateauPlace = 0;
 		bateau = null;
+		wakeListener();
+	}
+	
+	public void wakeListener() {
 		addMouseMotionListener(new MouseGrilleListener());
 		addMouseListener(new MouseGrilleListener());
 		addKeyListener(new KeyGrilleListener());
-		setVisible(true);
+		setFocusable(true);
 		requestFocusInWindow();
 	}
-	
-	
 	
 	public Grille getGrilleB() {
 		return grilleB;
@@ -99,49 +101,33 @@ public class AffichageGrille extends JPanel implements Serializable{
 		}
 	}
 
-
-
 	public int getBateauPlace() {
 		return bateauPlace;
 	}
-
-
 
 	public void setBateauPlace(int bateauPlace) {
 		this.bateauPlace = bateauPlace;
 	}
 
-
-
 	public Bateau getBateau() {
 		return bateau;
 	}
-
-
 
 	public void setBateau(Bateau bateau) {
 		this.bateau = bateau;
 	}
 
-
-
 	public Joueur getJoueur() {
 		return joueur;
 	}
-
-
 
 	public void setJoueur(Joueur joueur) {
 		this.joueur = joueur;
 	}
 
-
-
 	public int getPosX() {
 		return posX;
 	}
-
-
 
 	public void setPosX(int posX) {
 		this.posX = posX;

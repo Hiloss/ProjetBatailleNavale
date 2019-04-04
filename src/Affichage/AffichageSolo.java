@@ -14,12 +14,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Listener.sauvButton;
 import Source.*;
 
 public class AffichageSolo extends JPanel implements Serializable {
 	
 	private AffichageGrille dessGrille;
 	private Joueur nJoueur;
+	private JButton sauv;
 	
 	public AffichageSolo(Grille g, Joueur j) {
 		nJoueur = j;
@@ -28,11 +30,18 @@ public class AffichageSolo extends JPanel implements Serializable {
 		add(new JLabel("Pseudo : " + nJoueur.getNom()));
 		add(dessGrille);
 		add(new JLabel("Taille : " + dessGrille.getGrilleB().getTaille()));
-		
+		sauv = new JButton("Sauvegarder");
+		sauv.addActionListener(new sauvButton(this));
+		add(sauv);
 	}
 	
+	public AffichageGrille getDessGrille() {
+		return dessGrille;
+	}
+
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
 	}
+	
 }

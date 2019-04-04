@@ -31,7 +31,7 @@ public class Menu extends JPanel {
 			}
 		});
 		
-		deux = new JButton("Deux");
+		deux = new JButton("Deux (pas développé)");
 		deux.setPreferredSize(new Dimension(190,90));
 		deux.addActionListener(new ActionListener() {
 			
