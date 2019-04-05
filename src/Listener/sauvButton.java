@@ -11,6 +11,11 @@ import javax.swing.JOptionPane;
 
 import Affichage.AffichageSolo;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Gère l'appui sur le button sauvegarder
+ */
 public class sauvButton implements ActionListener, Serializable {
 
 	private AffichageSolo a;

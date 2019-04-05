@@ -5,12 +5,22 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Classe représentant un joueur 
+ */
 public class Joueur implements Serializable {
 
 	private String nom;
 	private ArrayList<Bateau> tabBateau;
 	private Grille grilleBateau;
 	
+	/**
+	 * Construction d'un joueur
+	 * @param n Nom du joueur
+	 * @param t Taille de sa grille
+	 */
 	public Joueur(String n, int t) {
 		nom = n;
 		grilleBateau = new Grille(t);
@@ -22,36 +32,66 @@ public class Joueur implements Serializable {
 		tabBateau.add(new Bateau("Torpilleur", 2, 1, null));
 	}
 
+	/**
+	 *  Récupèrer la liste de bateau du joueur
+	 * @return ArrayList<Bateau>
+	 */
 	public ArrayList<Bateau> getTabBateau() {
 		return tabBateau;
 	}
 
+	/**
+	 * Modifie la liste de bateau du joueur
+	 * @param tabBateau
+	 */
 	public void setTabBateau(ArrayList<Bateau> tabBateau) {
 		this.tabBateau = tabBateau;
 	}
 
+	/**
+	 * Récupérer le nom du joueur
+	 * @return nom
+	 */
 	public String getNom() {
 		return nom;
 	}
 
+	/**
+	 * Modifie le nom du joueur
+	 * @param nom
+	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
+	/**
+	 * @return grille sur laquelle les bateaux du joueur sont placés
+	 */
 	public Grille getGrilleBateau() {
 		return grilleBateau;
 	}
 
+	/**
+	 * Modifie la grille sur laquelle les bateaux du joueur sont placés
+	 * @param grilleBateau
+	 */
 	public void setGrilleBateau(Grille grilleBateau) {
 		this.grilleBateau = grilleBateau;
 	}
 	
-
+	/* 
+	 * Permet de récupérer un joueur en String
+	 * return string
+	 */
 	@Override
 	public String toString() {
 		return "Joueur [nom=" + nom + ", tabBateau=" + tabBateau + ", grilleBateau=" + grilleBateau + "]";
 	}
 	
+	/**
+	 * Trier la liste de bateau du joueur
+	 * @return ArrayList<Bateau>
+	 */
 	public ArrayList<Bateau> trierTailleBateau(){
 		ArrayList<Bateau> res = new ArrayList<Bateau>(tabBateau.size());
 		while (! tabBateau.isEmpty()) {
@@ -71,6 +111,13 @@ public class Joueur implements Serializable {
 		return res;
 	}
 		
+	/**
+	 * Permet de placer un bateau sur la grille du joueur
+	 * @param b Bateau a placé
+	 * @param c Case de départ
+	 * @param orient Orientation du bateau 
+	 * @return boolean
+	 */
 	public boolean placerBateau(Bateau b, Case c, int orient){
 		boolean res = true;
 		
@@ -165,6 +212,12 @@ public class Joueur implements Serializable {
 		return res;
 	}
 	
+	/**
+	 * Permet de tirer sur la grille de j2
+	 * @param j2 Joueur sur qui tiré
+	 * @param c Case sur laquelle tiré
+	 * @return boolean
+	 */
 	public boolean tirer(Joueur j2, Case c) {
 		boolean res = true;
 		switch (c.getEtat()) {

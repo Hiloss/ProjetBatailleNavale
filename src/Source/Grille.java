@@ -2,11 +2,20 @@ package Source;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Grille 
+ */
 public class Grille implements Serializable {
 
 	ArrayList<Case> listCase;
 	int taille;
 	
+	/**
+	 * Creer une grille de taille t sur t
+	 * @param t
+	 */
 	public Grille(int t) {
 		taille = t;
 		listCase = new ArrayList<Case>(t*t);
@@ -17,6 +26,10 @@ public class Grille implements Serializable {
 		}
 	}
 
+	/* 
+	 * Ecrit la grille sous forme d'un String
+	 * @return string
+	 */
 	@Override
 	public String toString() {
 		String res = "";
@@ -35,27 +48,53 @@ public class Grille implements Serializable {
 		return res;
 	}
 
+	/**
+	 * Récupérer la taille de la grille
+	 * @return taille
+	 */
 	public int getTaille() {
 		return taille;
 	}
 
+	/**
+	 * Modifie la taille de la grille
+	 * @param taille
+	 */
 	public void setTaille(int taille) {
 		this.taille = taille;
 	}
 
+	/**
+	 * Récupérer la liste de case de la grille
+	 * @return ArrayList<Case>
+	 */
 	public ArrayList<Case> getListCase() {
 		return listCase;
 	}
 
+	/**
+	 * Modifie la liste de case de la grille
+	 * @param listCase
+	 */
 	public void setListCase(ArrayList<Case> listCase) {
 		this.listCase = listCase;
 	}
 	
+	/**
+	 * Récupérer la place d'une case dans la liste selon sa pos en x et en y
+	 * @param x
+	 * @param y
+	 * @return int
+	 */
 	public int indexCase(int x, int y) {
 		return (y-1)*taille+(x-1);
 	}
 	
-	
+	/**
+	 * Permet de savoir si un bateau (b) est détruit sur cette grille
+	 * @param b
+	 * @return boolean
+	 */
 	public boolean BateauDetruit(Bateau b) {
 		boolean res = false;
 		int xc = b.getPos().getPosX();

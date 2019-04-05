@@ -18,6 +18,11 @@ import javax.swing.JPanel;
 import Listener.KeyGrilleListener;
 import Listener.MouseGrilleListener;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Gère l'affichage de la grille d'un joueur
+ */
 public class AffichageGrille extends JPanel implements Serializable{
 	
 	private Grille grilleB;
@@ -133,59 +138,40 @@ public class AffichageGrille extends JPanel implements Serializable{
 		this.posX = posX;
 	}
 
-
-
 	public int getPosY() {
 		return posY;
 	}
-
-
 
 	public void setPosY(int posY) {
 		this.posY = posY;
 	}
 
-
-
 	public int getOrient() {
 		return orient;
 	}
-
-
 
 	public void setOrient(int orient) {
 		this.orient = orient;
 	}
 
-
-
 	public int getHauteur() {
 		return hauteur;
 	}
-
-
 
 	public void setHauteur(int hauteur) {
 		this.hauteur = hauteur;
 	}
 
-
-
 	public int getLongueur() {
 		return longueur;
 	}
-
-
 
 	public void setLongueur(int longueur) {
 		this.longueur = longueur;
 	}
 
-
-
 	public void setGrilleB(Grille grilleB) {
 		this.grilleB = grilleB;
 	}
-	
 	
 }

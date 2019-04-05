@@ -4,6 +4,11 @@ import java.awt.event.KeyListener;
 
 import Affichage.AffichageGrille;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Lecture clavier sur une grille
+ */
 public class KeyGrilleListener  implements KeyListener {
 
 	@Override

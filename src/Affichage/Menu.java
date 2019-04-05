@@ -8,6 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Gère l'affichage du Menu
+ */
 public class Menu extends JPanel {
 	
 	private JButton solo, deux, autre;

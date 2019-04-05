@@ -17,6 +17,11 @@ import javax.swing.JTextField;
 import Listener.sauvButton;
 import Source.*;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Gère l'affichage du mode Solo
+ */
 public class AffichageSolo extends JPanel implements Serializable {
 	
 	private AffichageGrille dessGrille;

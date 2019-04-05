@@ -9,6 +9,11 @@ import Affichage.AffichageGrille;
 import Source.Case;
 import Source.Joueur;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Lecture souris sur une grille
+ */
 public class MouseGrilleListener implements MouseListener, MouseMotionListener {
 
 	@Override

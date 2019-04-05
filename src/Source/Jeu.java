@@ -14,8 +14,18 @@ import Affichage.AffichageGrille;
 import Affichage.AffichageSolo;
 import Affichage.Menu;
 
+/**
+ * @author Brian Bardet
+ * @author Lucas Ambellouis
+ * Classe contenant le main pour le projet BatailleNavale
+ */
 public class Jeu {
 
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 * @throws ClassNotFoundException
+	 */
 	public static void main(String[] args) throws InterruptedException, ClassNotFoundException {
 				
 		//Affichage du menu
@@ -46,6 +56,10 @@ public class Jeu {
 		}
 	}
 	
+	/**
+	 * Gestion du choix 1 lors de l'appuie sur Solo dans le menu
+	 * @param jf JFrame
+	 */
 	public static void choixSolo(JFrame jf) {	
 		
 		Scanner sc = new Scanner(System.in);
@@ -74,7 +88,12 @@ public class Jeu {
 		fenetre.setSize(600,600);
 	}
 	
-	public static void choixCharge(JFrame jf) throws ClassNotFoundException {
+	/**
+	 * Gestion du choix 3 lors de l'appuie sur Charger dans le menu
+	 * @param jf JFrame
+	 * @throws ClassNotFoundException
+	 */
+	public static  void choixCharge(JFrame jf) throws ClassNotFoundException {
 		ObjectInputStream ois;
 		AffichageSolo jeux = null;
 		try {
